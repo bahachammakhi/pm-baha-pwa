@@ -18,7 +18,7 @@ function fApp() {
 //       }
 //     );
 //   });
-}
+
 function fOk() {
   l = $("#login").val();
   p = $("#pwd").val();

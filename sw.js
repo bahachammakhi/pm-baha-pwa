@@ -19,7 +19,6 @@ const RUNTIME = "runtime";
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
-  "index.html",
   "/index.html", // Alias for index.htm,
   "/css/app.css",
   "/js/app.js",
@@ -70,12 +69,16 @@ self.addEventListener("fetch", (event) => {
         }
 
         return caches.open(RUNTIME).then((cache) => {
-          return fetch(event.request).then((response) => {
-            // Put a copy of the response in the runtime cache.
-            return cache.put(event.request, response.clone()).then(() => {
-              return response;
+          if (
+            e.request.cache === "only-if-cached" &&
+            e.request.mode !== "same-origin"
+          )
+            return fetch(event.request).then((response) => {
+              // Put a copy of the response in the runtime cache.
+              return cache.put(event.request, response.clone()).then(() => {
+                return response;
+              });
             });
-          });
         });
       })
     );
