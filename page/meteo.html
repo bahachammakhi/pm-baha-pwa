@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/app.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <script>
+        $(document).ready(fAppMeteo);
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;myAPP</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="./meteo.html"><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>&nbsp;METEO.TN <span class="sr-only">(current)</span></a></li>
+                    <li><a href="./devise.html"><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>&nbsp;DEVISE</a></li>
+
+                </ul>
+
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date" placeholder="Date">
+            </div>
+            <button id="bokm" type="button" class="btn btn-info btn-lg btn-block">Afficher</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Ville</th>
+                        <th>Température</th>
+                    </tr>
+                </thead>
+                <tbody id="tb">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
